@@ -1,0 +1,4 @@
+- Purpose of strace command: strace is for tracing system calls and signals.
+
+- Trace linux process PID
+# strace -p process's PID
