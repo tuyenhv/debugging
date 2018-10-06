@@ -2,3 +2,9 @@
 
 - Trace linux process PID
 # strace -p process's PID
+
+
+Note:
+Some commands have quite option, so we should not run with this option for debugging.
+Remove this option for getting more log.
+
