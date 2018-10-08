@@ -8,3 +8,13 @@ Note:
 Some commands have quite option, so we should not run with this option for debugging.
 Remove this option for getting more log.
 
+waitpid syscall is for waiting the specific process.
+=> when debugging, we need to check whether the process which is waiting is correctly needed process.
+
+TODO
+1. Install strace 
+2. Add strace to excecv syscall.
+3. Remove the --quite option
+4. Check pid of waitpid whether that is the child's PID.
+5. Get option flags of waitpid to check the staus of child process.
+
