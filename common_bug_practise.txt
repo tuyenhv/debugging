@@ -1,3 +1,5 @@
+The original document is from https://www.iiitd.edu.in/~jalote/papers/CommonBugs.pdf
+
 I. Bug with pointers and memory.
 
 I.1 Memory leaks
