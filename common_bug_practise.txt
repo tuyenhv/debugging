@@ -1,0 +1,8 @@
+I. Bug with pointers and memory.
+
+I.1 Memory leaks
+This is a common programming bug which occurs frequently in the languge which do not have automatic garbage collection like C/C++.
+Reason: The memory is allocated to the program but it is not freed after.
+Solve: please free the memory when it is not used any more. (normarlly End of function, should free the memory which is allocated before).
+
+I.2 
