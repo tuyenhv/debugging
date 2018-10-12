@@ -7,4 +7,38 @@ This is a common programming bug which occurs frequently in the languge which do
 Reason: The memory is allocated to the program but it is not freed after.
 Solve: please free the memory when it is not used any more. (normarlly End of function, should free the memory which is allocated before).
 
-I.2 
+char* foo ( int s )
+{
+  char *output ;
+  if (s >0)
+    output =( char *) malloc ( size );
+  if ( s ==1)
+    return NULL ;
+  return ( output );
+  /* if s >0 and s ==1 then ,
+  * allocated memory for output
+  * is leaked */
+}
+
+I.2 Trả về giá trị của biến cục bộ
+Biến được khai báo trong hàm là biến cục bộ trong hàm.
+char * foo (){
+  char ch ;
+  // some operations
+  return (& ch );
+  /* local variable from the stack is returned */
+}
+
+I.3 Giải phóng vùng nhớ đã giải phóng.
+Lập trình viên cố gắng giải phóng vùng nhớ khi mà nó đã được giải phóng trước đó.
+
+main (){
+  char * str ;
+  str =( char *) malloc (10);
+  if ( global ==0)
+    free ( str );
+  // Some statements
+  free ( str ); /* Here str is already freed
+                 * on true branch */
+}
+
