@@ -42,3 +42,32 @@ main (){
                  * on true branch */
 }
 
+I. 4 Null dereference
+Lỗi này xảy ra khi chúng ta cố gắng sử dụng con trỏ trong khi nó đang được trỏ tới NULL.
+char * ch = NULL ;
+if (x >0){
+  ch = ’c ’;
+}
+printf ("\% c " , * ch );
+// ch may be NULL
+Trong ví dụ trên, có thể chương trình không nhảy vào khổi lệnh trong if. Như vậy con trỏ ch sẽ không
+được gán giá trị và chúng ta đã lấy giá trị của con trỏ ch sau đó.
+
+// From now on, English version
+I.5 Exposure of private data to untrusted components
+Sometimes it is important to preserve the integrity and security of data.
+The data which is supposed to be private should not be given access to external source.
+
+struct node {
+  char * ch ;
+};
+char * foo ( struct node nn ){
+  return ( nn . ch );
+}
+main (){
+  struct node n ; char * ff ;
+  n.ch =( char *) malloc (1);
+  *( n . ch )=100;
+  ff = foo( n );
+  /* Here ff has an access to structure variable */
+}
